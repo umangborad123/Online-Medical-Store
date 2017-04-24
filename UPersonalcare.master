@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Umaster.master" AutoEventWireup="true" CodeFile="UPersonalcare.master.cs" Inherits="UPersonalcare"  %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="itemtrack" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="leftcontent" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="logincontent" Runat="Server">
+</asp:Content>
+
+<asp:Content ID="Content6" runat="server" contentplaceholderid="maincontent">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    <div class="fontStyle">
+
+        <header>
+                        <div style="margin-left:300px;height:800px">
+                        <asp:Menu ID="Menu1" runat="server" BackColor="#F7F6F3" Width="430px" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Large" ForeColor="#7C6F57" Orientation="Horizontal" StaticSubMenuIndent="10px" DynamicHoverStyle-ForeColor="#000066" DynamicSelectedStyle-ForeColor="#CC0000" StaticHoverStyle-ForeColor="#000066">
+                            <DynamicHoverStyle ForeColor="Blue" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle />
+                            <DynamicSelectedStyle />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/UPerface.aspx" Text="Face Care" Value="Face Care" ></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/UPerhaircare.aspx" Text="Hair Care" Value="Hair Care"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/UPerbodycare.aspx" Text="Body Care" Value="Body Care"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/UPeroralcare.aspx" Text="Oral Care" Value="Oral Care"></asp:MenuItem>
+                                <%--<asp:MenuItem NavigateUrl="~/UPerlipcare.aspx" Text="Lip Care" Value="Lip Care"></asp:MenuItem>--%>
+                            </Items>
+                            <StaticHoverStyle ForeColor="Blue" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle  />
+                        </asp:Menu>
+                       </div>
+	            </header>
+                    
+    </div>
+        </asp:ContentPlaceHolder>
+</asp:Content>
+
+

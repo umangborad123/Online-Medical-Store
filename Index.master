@@ -1,0 +1,356 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Index.master.cs" Inherits="Index" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+
+<!DOCTYPE html>
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+	<head runat="server" id="head">
+		<title>Online Medical Store India</title>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+		<%--<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>--%>
+		<link rel="shortcut icon" type="image/x-icon" href="images/pageicon.png" />
+		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<link rel="stylesheet" href="css/camera.css" type="text/css" media="all" />
+		<meta name="keywords" content="Healthy iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<link rel="stylesheet" href="css/responsiveslides.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/responsiveslides.min.js"></script>
+		  <script>
+		      // You can also use "$(window).load(function() {"
+		      $(function () {
+
+		          // Slideshow 1
+		          $("#slider1").responsiveSlides({
+		              maxwidth: 1600,
+		              speed: 600
+		          });
+		      });
+		  </script>
+	</head>
+	<body>
+        
+			<form id="form1" runat="server">
+                <ajax:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></ajax:ToolkitScriptManager>
+			    <div class="header">
+				    <div class="wrap">
+				        <div class="logo">
+					        <a><img src="images/logo25.png" title="logo" /></a>
+				        </div>
+                        </div>
+				<asp:ContentPlaceHolder ID="loginholder" runat="server" >
+                    <a href="Register.aspx" style="margin-left:900px">Register</a>
+                     <%--<asp:LinkButton ID="linkbtnregister" runat="server" CssClass="LeftMargin fontStyle" ForeColor="Red">Register</asp:LinkButton>--%>&nbsp;&nbsp;
+                    <img src="images/orange-line-new.jpg" />&nbsp;&nbsp;
+                    <asp:LinkButton ID="btnlogin" runat="server" Font-Bold="true">Login</asp:LinkButton>
+                    &nbsp;
+                    <ajax:ModalPopupExtender ID="ModalPopupExtender1"
+                      TargetControlID="btnlogin"
+                      PopupControlID="popUpPanel"
+                      CancelControlID="btnclose"
+                      BackgroundCssClass="modalBackground"
+                      DropShadow="true"
+                      runat="server">
+                    </ajax:ModalPopupExtender>
+                    <asp:Panel ID="popUpPanel" runat= "server" Width="320px" CssClass="loginform" BackColor="WhiteSmoke" Height="350px">
+                        <div style="width:320px; height:350px">
+                            <!DOCTYPE html>
+                            <table style="border-radius:5px">
+                                <tr>
+                                    <td style="text-align:center;color:steelblue;font-weight:bold;font-size:large">
+                                        <br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>User LogIn</b><br /><br /> </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;<asp:Label ID="Label1" runat="server" Width="100px" Font-Bold="true"  Text="Username" ForeColor="#000066"></asp:Label>
+                                        <br />
+                                        <br />
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td>&nbsp;&nbsp;&nbsp;<asp:TextBox ID="txtUserName" CssClass="username" runat="server" BorderWidth="2px" BorderColor="#456879" Width="220px" Height="23px"></asp:TextBox>
+                                        <br />
+                                        <br />
+                                    </td>
+                                    <td>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtUserName" ForeColor="Red" ></asp:RequiredFieldValidator>
+                                    </td>
+                                    <td>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidatoruname" runat="server" ForeColor="Red" ErrorMessage="Invalid" ControlToValidate="txtUserName" ValidationExpression="[a-zA-Z ]+$" Font-Size="X-Small"></asp:RegularExpressionValidator>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;<asp:Label ID="Label2" runat="server" Font-Bold="true"  Text="Password" ForeColor="#000066"></asp:Label>
+                                        <br />
+                                        <br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;<asp:TextBox ID="txtPwd" runat="server" TextMode="Password" CssClass="password" BorderColor="#456879" BorderWidth="2px" Height="23px" Width="220px"></asp:TextBox>
+                                        <br />
+                                        <br />
+                                    </td>
+                                    <td>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ControlToValidate="txtPwd" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <br />
+                                        <br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;<asp:CheckBox ID="CheckBox1" runat="server" ForeColor="#333399" Font-Bold="true"  Text="Remember me"/>
+                                        &nbsp<asp:LinkButton ID="LinkButton1" runat="server" ForeColor="#333399" Font-Bold="true"  Font-Underline="true" >Forget Password ?</asp:LinkButton>
+                                        <br />
+                                        <br />
+                                        <br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">&nbsp;&nbsp;&nbsp;<asp:Button ID="btnSubmit" runat="server" Width="100px" CssClass="textboxedges fontStyle" Text="Login"  ForeColor="SteelBlue" Font-Bold="true" Height="35px" OnClick="btnSubmit_Click" />
+                                        &nbsp;&nbsp;
+                                        <asp:Button ID="btnclose" runat="server" Text="Close" Width="100px" CssClass="textboxedges fontStyle"  ForeColor="SteelBlue" Font-Bold="true"  Height="35px" CausesValidation="false" />
+                                        <br />
+                                        <br />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </asp:Panel>
+        </asp:ContentPlaceHolder>
+    </div>
+
+
+
+
+               <%-- <div class="clear">
+                 </div>
+
+				<div class="clear"> </div>--%>
+				<%--<ul id="topnav">
+					<div class="wrap" >
+			            <li style="text-align: center"><a href="Index.aspx">Home --%>      <%-- <div class="clear">
+                 </div>
+
+				<div class="clear"> </div>--%>
+				<ul id="topnav">
+					<div class="wrap" >
+			            <li style="text-align: center"><a href="Index.aspx">Home</a></li>
+				        <li style="text-align: center"><a href="services.aspx">Services</a></li>
+                        <li style="text-align: center"><a href="MedicalDepartment.aspx">Medical Department</a></li>
+                        <li style="text-align: center"><a href="feedback.aspx">Feedback</a></li>
+                        <li style="text-align: center"><a href="contactus.aspx">Contact Us</a></li>
+                    </div>	
+    		    </ul>
+		
+		<div class="clear"> </div>
+			<!--start-image-slider---->
+					<div class="image-slider">
+						<!-- Slideshow 1 -->
+					    <ul class="rslides" id="slider1">
+					      <li><img src="images/1.jpg" alt=""></li>
+					      <li><img src="images/2.jpg" alt=""></li>
+					      <li><img src="images/1.jpg" alt=""></li>
+					    </ul>
+						 <!-- Slideshow 2 -->
+					</div>
+					<!--End-image-slider---->
+		    <div class="clear"> </div>
+		    <div class="wrap">
+		    	<div class="content">
+                    <asp:ContentPlaceHolder ID="contentdept" runat="server">
+							<div class="grids">
+                                <div class="grid box">
+                                    <h4>Pharmaceuticals</h4>
+                                    <a href="Pharmaceuticals.aspx">
+                                    <img src="images/pharmaceutical.png" /></a>
+                                </div>
+                                <div class="grid box">
+                                    <h4>Personal Care</h4>
+                                    <a href="Personalcare.aspx">
+                                    <img src="images/personal care.png" /></a>
+                                </div>
+                                <div class="grid box">
+                                    <h4>Baby Care</h4>
+                                    <a href="Babycare.aspx">
+                                    <img src="images/baby care.png" /></a>
+                                </div>
+                                <div class="grid box">
+                                    <h4>Nutrition Health</h4>
+                                    <a href="Nutrition.aspx">
+                                    <img src="images/nutrition health.png" /></a>
+                                </div>
+                                <div class="clear">
+                                </div>
+                            </div>
+                    </asp:ContentPlaceHolder>
+						 <div class="clear"> </div>
+  
+		</div>
+		<div class="clear"> </div>
+		<div class="section group">
+            <asp:ContentPlaceHolder ID="leftcontent" runat="server">
+				<div class="col_1_of_3 span_1_of_3 frist fontStyle">
+                    <h2><asp:Label ID="lblcompanies" runat="server" CssClass="fontHeader" Text="Companies"></asp:Label></h2>
+                    <asp:BulletedList ID="BulletedList1" runat="server" DisplayMode="Text" CssClass="fontStyle" BulletStyle="CustomImage" BulletImageUrl="~/images/bullet.png" DataSourceID="SqlDataSource1" DataTextField="CompanyName" DataValueField="CompanyName">
+                    </asp:BulletedList>
+
+
+                    <%--<ul>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Himalaya</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Wockhardt</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Ranbaxy</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Cadila Health Care</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Aurobindo Pharma</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Jubilant Life Science</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">IPCA Labs LTD.</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Torrent Pharma</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">GlaxoSmithKline</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Dr. Reddy's Lab</a></li>
+                       <%-- <li>
+                            <img src="images/marker3.png" title="marker"><a href="#">Lorem ipsum dolor sit amet</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#">Lorem ipsum dolor sit amet</a></li>
+                    </ul>--%>
+                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:OMSIConnectionString3 %>' SelectCommand="SELECT [CompanyName] FROM [CompanyName]"></asp:SqlDataSource>
+                </div>
+               </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="maincontent" runat="server">
+				<div class="col_1_of_3 span_1_of_3 second fontStyle">
+                    
+                    <h2>
+                        <asp:Label ID="lblwhat" runat="server" CssClass="fontHeader" Text="What We Do"></asp:Label><br /><br />
+                        <img src="images/3.png" title="" />
+                    </h2>
+                    
+                    <%--<img sr title="img1" />--%>
+                    &nbsp;<%-- <h3>consectetur adipisicing elit, sed do eiusmod tempor </h3>--%>
+                    <p style="align-self:auto; text-align: justify; color:black">
+                        <span class="fontStyle">
+                        It’s an online pharmacy website to provide medicine to your doorsteps with genuine invoice. You can get free as well as paid advice and get discounts on medicine bought through us.
+                        </span>
+                    </p>
+
+                    <p style="color: #000000" >
+                        <span class="fontStyle">
+                            We seek to bring world class medical care into our patients’ homes. Our aim is to make primary healthcare not only more accessible, but also more affordable and accountable to our patients’ needs.
+                        </span>
+                    </p>
+
+                    <p style="color: #000000">
+                         <span class="fontStyle">
+                            Appointments and check-ups are as stressful for any patients. But there’s a better way. With our website, you can now let the hospital come to you.  by your doctor or hospital. For instance, after your patients are discharged from hospital, they can continue to receive hospital quality care from the doctors in comfort and security of your home.
+                         </span>
+                    </p>
+                   <%-- <a href="single.html">ReadMore</a>--%>
+                </div>
+                </asp:ContentPlaceHolder>  
+            <asp:ContentPlaceHolder ID="logincontent" runat="server" >
+                <div style="height:200px">
+                    <div class="col_1_of_3 span_1_of_3 second" style="height:200px">
+
+                        <h2><asp:Label ID="Label3" runat="server" CssClass="fontHeader" Text="Testimonials"></asp:Label></h2>
+
+                        <marquee direction="down" width="500px" behaviour="scroll" scrollamount="5" >
+                        
+                                              
+                    <%--<img src="images/testm/12.png" title="img1" /><br />
+                        <img src="images/testm/22.png" title="img1" /><br />
+                        <img src="images/testm/33.png" title="img1" /><br />
+                        <img src="images/testm/44.png" title="img1" /><br />
+                        <img src="images/testm/55.png" title="img1" /><br />
+                        <img src="images/testm/66.png" title="img1" />--%>
+
+                            <asp:Repeater runat="server" DataSourceID="SqlDataSource2">
+
+                                
+                                   
+                                    <HeaderTemplate>
+                                        <table>
+
+                                    </HeaderTemplate>
+                                
+
+                                <ItemTemplate>
+                                     
+                                        <tr>
+                                            <td>
+                                                <asp:Label ID="lblname" runat="server" ForeColor="#000066" Font-Bold="true" Text='<%# Eval("Name") %>'></asp:Label><br /><br />
+                                            </td>
+                                        </tr>
+                                              <table>                      
+                                        <tr>
+                                            <td>
+                                                <asp:Label ID="lblcomment" runat="server" CssClass="fontStyle" Text='<%# Eval("Comment") %>'></asp:Label><br /><br /><br /><br />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </ItemTemplate>
+
+                                <FooterTemplate>
+                                    </table>
+                                </FooterTemplate>
+
+                            </asp:Repeater>
+                            <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:OMSIConnectionString3 %>' SelectCommand="SELECT [Name], [Comment] FROM [Feedback]"></asp:SqlDataSource>
+                
+                        </marquee>
+                   
+                    
+                    <%--<h3>consectetur adipisicing elit, sed do eiusmod tempor </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <a href="single.html">ReadMore</a>--%>
+                    </div>
+                </div>
+                
+              </asp:ContentPlaceHolder> 
+			</div>
+
+			<div class="clear"> </div>
+			<div class="footer">
+				<div class="left-content">
+					<img src="images/logo11.png" title="logo" />
+				</div>
+				<div class="right-content">
+					<p>    &#169	2015 All Rights Reserved | Design By Radix Web </p>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+	        </form>
+	</body>
+</html>
+
+
+<%--<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>--%>

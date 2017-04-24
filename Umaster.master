@@ -1,0 +1,241 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Umaster.master.cs" Inherits="uuser" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+
+<!DOCTYPE html>
+
+<html>
+	<head runat ="server">
+		<title>Online Medical Store India</title>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" type="image/x-icon" href="images/pageicon.png" />
+		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<link rel="stylesheet" href="css/camera.css" type="text/css" media="all" />
+		<meta name="keywords" content="Healthy iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<link rel="stylesheet" href="css/responsiveslides.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/responsiveslides.min.js"></script>
+		  <script>
+		      // You can also use "$(window).load(function() {"
+		      $(function () {
+
+		          // Slideshow 1
+		          $("#slider1").responsiveSlides({
+		              maxwidth: 1600,
+		              speed: 600
+		          });
+		      });
+		  </script>
+
+        
+
+	</head>
+	<body>
+			<form id="form1" runat="server">
+                <ajax:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></ajax:ToolkitScriptManager>
+			<div class="header">
+				<div class="wrap">
+				<div class="logo">
+					<a href="index.html"><img src="images/logo25.png" title="logo" /></a>
+				</div>
+				<%--<div class="contact-info">
+					<ul>
+						<li>Help line</li>
+						<li>+123-456-78901</li>
+						<li>MON. - FRI., 8 AM- 8 PM EST </li>
+					</ul>
+				</div>--%>
+				<div class="clear"> </div>
+				</div>
+
+                <table style="margin-left:1100px">
+                   <tr >
+                       <td style="font-size:medium; color:white" class="fontStyle">
+                           Welcome, <asp:Label ID="lblname" runat="server" ForeColor="White" Text=""></asp:Label>
+                           &nbsp;&nbsp;
+                      </td>
+                       <td>
+                           <img src="images/orange-line-new.jpg" />
+                       </td>
+                       <td style="font-size:medium; color:white" >
+                           &nbsp;&nbsp;
+                           <asp:LinkButton ID="btnlogout" runat="server" OnClick="btnlogout_Click">Logout</asp:LinkButton>
+                           &nbsp;&nbsp;
+                       </td>
+                       <td>
+                           <img src="images/orange-line-new.jpg" />
+                       </td>
+                       <td>
+                            <td style="font-size:medium; color:white;font-family:'Comic Sans MS'" >
+                           &nbsp;&nbsp;
+                           <asp:ImageButton ID="btnshoppingcart" runat="server" ImageUrl="~/images/shoppingcart1.gif" OnClick="btnshoppingcart_Click" />
+                            &nbsp;&nbsp;
+                            <asp:ContentPlaceHolder ID="itemtrack" runat="server">
+                            <asp:Label ID="lblitemcount" runat="server" Text=""></asp:Label>
+                                </asp:ContentPlaceHolder>
+                       </td>
+                   </tr>
+                </table>
+
+			</div>
+
+				<%--<div class="clear"> </div>--%>
+				<ul id="topnav">
+					<div class="wrap">
+			            <li style="text-align: center"><a href="Uhome.aspx">Home</a></li>
+
+				        <li style="text-align: center"><a href="Uinbox.aspx">Inbox</a></li>
+
+				        <li style="text-align: center"><a href="UContactDoctor.aspx">Doctor's Directory</a></li>
+
+				        <li style="text-align:center"><a href="Umedicine.aspx">Medicines</a>
+				        				       
+        		        <%--<li style="text-align:center"><a href="Ufeedback.aspx">Feedback</a>--%>
+
+                        <li style="text-align: center"><a href="Ucart.aspx">Cart Details</a></li>
+            		</div>	
+    	    	</ul>
+		
+		<div class="clear"> </div>
+			<!--start-image-slider---->
+					<div class="image-slider">
+						<!-- Slideshow 1 -->
+					    <ul class="rslides" id="slider1">
+					      <li><img src="images/1.jpg" alt=""></li>
+					      <li><img src="images/2.jpg" alt=""></li>
+					      <li><img src="images/1.jpg" alt=""></li>
+					    </ul>
+						 <!-- Slideshow 2 -->
+					</div>
+					<!--End-image-slider---->
+		    <div class="clear"> </div>
+		    <div class="wrap">
+		    	<div class="content">
+                    <asp:ContentPlaceHolder ID="contentdept" runat="server">
+							<div class="grids">
+                                <div class="grid box">
+                                    <h4>Pharmaceuticals</h4>
+                                    <a href="UPharmaceuticals.aspx">
+                                    <img src="images/pharmaceutical.png" /></a>
+                                </div>
+                                <div class="grid box">
+                                    <h4>Personal Care</h4>
+                                    <a href="UPersonalcare.aspx">
+                                    <img src="images/personal care.png" /></a>
+                                </div>
+                                <div class="grid box">
+                                    <h4>Baby Care</h4>
+                                    <a href="UBabyCare.aspx">
+                                    <img src="images/baby care.png" /></a>
+                                </div>
+                                <div class="grid box">
+                                    <h4>Nutrition Health</h4>
+                                    <a href="UNutritionHealth.aspx">
+                                    <img src="images/nutrition health.png" /></a>
+                                </div>
+                                <div class="clear">
+                                </div>
+                            </div>
+                    </asp:ContentPlaceHolder>
+						 <div class="clear"> </div>
+  
+		</div>
+		<div class="clear"> </div>
+		<div class="section group">
+            <asp:ContentPlaceHolder ID="leftcontent" runat="server">
+				<div class="col_1_of_3 span_1_of_3 frist">
+                    <h2><asp:Label ID="Label1" runat="server" Text="Companies" CssClass="fontHeader" Font-Size="XX-Large"></asp:Label></h2>
+                    <asp:BulletedList ID="BulletedList1" runat="server" DisplayMode="Text" BulletStyle="CustomImage" BulletImageUrl="~/images/bullet.png" DataSourceID="SqlDataSource1" DataTextField="CompanyName" DataValueField="CompanyName">
+                    </asp:BulletedList>
+                    <%--<ul>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Himalaya</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Wockhardt</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Ranbaxy</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Cadila Health Care</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Aurobindo Pharma</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Jubilant Life Science</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">IPCA Labs LTD.</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Torrent Pharma</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">GlaxoSmithKline</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#" style="color: #000000">Dr. Reddy's Lab</a></li>
+                       <%-- <li>
+                            <img src="images/marker3.png" title="marker"><a href="#">Lorem ipsum dolor sit amet</a></li>
+                        <li>
+                            <img src="images/marker3.png" title="marker"><a href="#">Lorem ipsum dolor sit amet</a></li>
+                    </ul>--%>
+                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:OMSIConnectionString3 %>' SelectCommand="SELECT [CompanyName] FROM [CompanyName]"></asp:SqlDataSource>
+                </div>
+               </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="maincontent" runat="server">
+				<div class="col_1_of_3 span_1_of_3 second">
+                    <h2>Welcome</h2>
+
+                    
+                </div>
+                </asp:ContentPlaceHolder>  
+            <asp:ContentPlaceHolder ID="logincontent" runat="server" >
+                <div style="height:300px">
+                    <div class="col_1_of_3 span_1_of_3 second" style="height:300px">
+                        <h2>Testimonials</h2>
+                        <marquee direction="down" width="500px" behaviour="scroll" scrollamount="10" >
+<img src="images/testm/11.png" title="img1" /><br />
+                   
+                        <img src="images/testm/22.png" title="img1" /><br />
+                        <img src="images/testm/33.png" title="img1" /><br />
+                        <img src="images/testm/44.png" title="img1" /><br />
+                        <img src="images/testm/55.png" title="img1" /><br />
+                        <img src="images/testm/66.png" title="img1" /></marquee>
+                   
+                    
+                    <%--<h3>consectetur adipisicing elit, sed do eiusmod tempor </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <a href="single.html">ReadMore</a>--%>
+                    </div>
+                </div>
+              </asp:ContentPlaceHolder> 
+			</div>
+
+			<div class="clear"> </div>
+			<div class="footer">
+				<div class="left-content">
+					<img src="images/logo11.png" title="logo" />
+				</div>
+				<div class="right-content">
+					<p>&#169	2015 All Rights Reserved | Design By Radix Web</p>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+	        </form>
+	</body>
+</html>
+
+
+<%--<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>--%>
